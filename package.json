@@ -1,0 +1,20 @@
+{
+  "name": "ux-assertion-video-validator",
+  "version": "1.0.0",
+  "description": "CLI pipeline: validate designer UX assertions against app screen recording using Claude VLM",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "validate": "node src/index.js",
+    "run": "node src/index.js"
+  },
+  "keywords": ["ux", "assertions", "video", "claude", "vlm"],
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "dotenv": "^16.4.5",
+    "fluent-ffmpeg": "^2.1.3",
+    "ffmpeg-static": "^5.2.0",
+    "yargs": "^17.7.2"
+  }
+}

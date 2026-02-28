@@ -1,0 +1,23 @@
+[
+  {
+    "id": "step1-assertion1",
+    "text": "Send message button should be visible",
+    "type": "concrete",
+    "testStepId": "step1",
+    "testStepDescription": "User is searching for a contact and typing a message in the chat to send it"
+  },
+  {
+    "id": "step1-assertion2",
+    "text": "Successfully make a call to the contact",
+    "type": "concrete",
+    "testStepId": "step1",
+    "testStepDescription": "Users should be to able to make a call to the contact"
+  },
+  {
+    "id": "step2-assertion1",
+    "text": "User is trying to send a voice note",
+    "type": "concrete",
+    "testStepId": "step2",
+    "testStepDescription": "In the chat, the user searches for a contact and tries to send a voice note"
+  }
+]

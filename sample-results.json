@@ -1,0 +1,44 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 5,
+              "description": "User types 'Hello' - text appears in message input field with green send button visible on right"
+            },
+            {
+              "timestampSeconds": 6,
+              "description": "User continues typing 'Hello test m' with autocomplete suggestions appearing above keyboard (send button remains visible)"
+            },
+            {
+              "timestampSeconds": 8,
+              "description": "User completes typing 'Hello test message' in the input field (send button still visible)"
+            },
+            {
+              "timestampSeconds": 11,
+              "description": "User taps send button. Message is sent and appears in chat bubble under 'Today' label at 11:10 PM with delivery checkmark. Input field clears"
+            }
+          ],
+          "explanation": "The send message button becomes visible once the user starts typing in the message input field. At timestamp 5, after typing 'Hello', a green send button is explicitly mentioned as being visible on the right side of the input field. This button remains visible throughout the typing process and is successfully tapped at timestamp 11 to send the message."
+        }
+      ]
+    }
+  ]
+}

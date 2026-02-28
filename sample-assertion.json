@@ -1,0 +1,9 @@
+[
+  {
+    "id": "step1-assertion1",
+    "text": "Send message button should be visible",
+    "type": "concrete",
+    "testStepId": "step1",
+    "testStepDescription": "User is searching for a contact and typing a message in the chat to send it"
+  }
+]
