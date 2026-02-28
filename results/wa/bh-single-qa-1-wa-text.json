@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 4,
+              "description": "User begins typing 'Hello test message!' in the input field. The send button area shows a microphone icon in the bottom right toolbar."
+            },
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "As text 'Hello' is typed, a green circular send button with an arrow appears on the right side of the input field, replacing the default microphone icon in that position."
+            },
+            {
+              "timestampSeconds": 11,
+              "frameIndex": 11,
+              "description": "With 'Hello test message!' fully typed, the green send button is clearly visible, indicating it has rendered based on user action (text input)."
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "After the message is sent (visible in chat as 'Hello test message!' at 11:10 PM), the input field is empty and the send button has reverted to the default microphone icon state."
+            }
+          ],
+          "explanation": "The assertion states that the send button should not be the default button and should render based on user action. Observing the frames, in frames 4-11, when the user is typing 'Hello test message!', the send button on the right side of the input field changes from a microphone icon (default state) to a green circular send/arrow button. After the message is sent (frame 12-14), the button reverts back to the default state (microphone icon) when the input field is empty. This demonstrates that the send button dynamically changes appearance based on user input, confirming the assertion."
+        }
+      ]
+    }
+  ]
+}

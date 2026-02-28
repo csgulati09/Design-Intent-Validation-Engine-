@@ -1,0 +1,68 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "We need to check how intuitive the send message button is",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+          "verdict": "pass",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "timestampSeconds": 0,
+              "frameIndex": 0,
+              "description": "Main chat list screen visible with search bar at top reading 'Ask Meta AI or Search', showing standard WhatsApp interface with clear navigation options"
+            },
+            {
+              "timestampSeconds": 1,
+              "frameIndex": 1,
+              "description": "Search interface activated showing categorized filters (Photos, GIFs, Links, Videos, Documents, Audio, Polls, Events) with back arrow for navigation, keyboard displayed"
+            },
+            {
+              "timestampSeconds": 2,
+              "frameIndex": 2,
+              "description": "User typed 'Me' in search field with 'Ask' button visible on right; filtered results show 'Me' chat at top with recent document preview, demonstrating real-time search filtering"
+            },
+            {
+              "timestampSeconds": 3,
+              "frameIndex": 3,
+              "description": "Chat thread opened showing conversation with 'Me' including previous PDF messages organized by day labels (Thursday, Sunday, Yesterday), input field active at bottom with keyboard"
+            },
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "User typing 'Hello' in message input field with predictive text suggestions ('Hello', 'Hello', waving emoji) appearing above keyboard, send button visible but not yet highlighted"
+            },
+            {
+              "timestampSeconds": 9,
+              "frameIndex": 9,
+              "description": "Complete message 'Hello test message!' typed in input field with cursor visible, predictive suggestions updated to 'I', 'Please', 'We', send button now highlighted in green indicating readiness"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "Message successfully sent and appears in chat thread under 'Today' label with timestamp '11:10 PM' and double checkmark indicating delivery, input field cleared"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "Back to main chat list where 'Me' conversation shows preview 'You: Hello test message!' with timestamp '11:10 PM', confirming message was sent and is visible in conversation list"
+            }
+          ],
+          "explanation": "The recording demonstrates a natural and intuitive flow for searching a contact and sending a message in WhatsApp. The user follows a standard workflow: (1) accesses search from the main chat list (t=0-1s), (2) types 'Me' in the search field with predictive suggestions appearing (t=2s), (3) selects the chat from filtered results (t=3s), (4) begins typing a message with autocomplete suggestions visible (t=4-11s), and (5) successfully sends the message by tapping the send button (t=11-12s). The interface provides clear visual feedback at each step - the search bar is prominent, keyboard appears automatically, text input shows real-time, predictive text aids typing, and the send button transitions from disabled (gray) to enabled (green) state. The message appears in the chat thread under 'Today' timestamp (t=12-13s), confirming successful delivery. The user then naturally navigates back to the main chat list (t=14s) where the sent message is visible in the conversation preview. All UI elements (search icon, text field, keyboard, send button, navigation) are clearly visible and respond as expected without errors or confusion."
+        }
+      ]
+    }
+  ]
+}

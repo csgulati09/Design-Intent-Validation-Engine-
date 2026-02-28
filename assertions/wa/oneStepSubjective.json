@@ -1,0 +1,9 @@
+[
+    {
+      "id": "step1-assertion1",
+      "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+      "type": "subjective",
+      "testStepId": "step1",
+      "testStepDescription": "We need to check how intuitive the send message button is"
+    }
+  ]

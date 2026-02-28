@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 5,
+      "frameCount": 75
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "timestampSeconds": 4.6,
+              "frameIndex": 23,
+              "description": "Text input field shows message being composed ('Hello test mess') with keyboard visible, but send button not yet transformed"
+            },
+            {
+              "timestampSeconds": 5.4,
+              "frameIndex": 27,
+              "description": "Complete message 'Hello test message!' typed with green circular send button visible on the right side of the input area"
+            },
+            {
+              "timestampSeconds": 11.6,
+              "frameIndex": 58,
+              "description": "After message is sent, input field is empty and the button has reverted to a microphone icon (for voice messages) instead of send arrow"
+            },
+            {
+              "timestampSeconds": 13.2,
+              "frameIndex": 66,
+              "description": "Confirms the microphone icon persists when input is empty, demonstrating dynamic button rendering based on user action"
+            }
+          ],
+          "explanation": "The assertion states that the send button should not be a default button but should render based on user action. Throughout the sequence, we observe dynamic send button behavior: When the message input is empty (frames 58, 66, 70), the send button appears as a microphone icon (voice message button). However, once the user types text (frames 27-55), the button transforms into a green send arrow. This demonstrates that the button is indeed rendered conditionally based on user input rather than displaying as a static default button, which is the expected forgiving and intentional interaction pattern."
+        }
+      ]
+    }
+  ]
+}

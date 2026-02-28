@@ -1,0 +1,44 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 2,
+      "frameCount": 30
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 5.5,
+              "description": "User typing in the message field. Text reads 'Hello' with cursor visible. A green send button appears on the right."
+            },
+            {
+              "timestampSeconds": 7,
+              "description": "Message text now reads 'Hello test' with cursor visible. Send button remains present on the right."
+            },
+            {
+              "timestampSeconds": 8.5,
+              "description": "Complete message text: 'Hello test message' with cursor blinking at the end. Send button still visible."
+            },
+            {
+              "timestampSeconds": 10,
+              "description": "Final message 'Hello test message!' ready to send. Keyboard returns to letter layout showing suggestions 'I', 'Please', 'We' above."
+            }
+          ],
+          "explanation": "The send message button becomes visible as soon as the user starts typing a message. At timestamp 5.5s, when the user types 'Hello', a green send button appears on the right side of the message input field. This button remains visible throughout the typing process (timestamps 6s, 7s, 7.5s, 8.5s, 9s, 10s, 10.5s) until the message is sent at around 11.5s. The button's presence is explicitly mentioned in the timeline descriptions."
+        }
+      ]
+    }
+  ]
+}

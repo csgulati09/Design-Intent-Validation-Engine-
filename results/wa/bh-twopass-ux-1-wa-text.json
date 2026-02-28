@@ -1,0 +1,40 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 10,
+      "frameCount": 150
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "timestampSeconds": 4.7,
+              "description": "User taps the message input field at the bottom, activating the keyboard for text entry - no mention of send button being visible yet"
+            },
+            {
+              "timestampSeconds": 5.5,
+              "description": "User types 'Hello' in the message field. Autocomplete suggestions appear above the keyboard - send button state not yet confirmed as visible/enabled"
+            },
+            {
+              "timestampSeconds": 8.6,
+              "description": "User completes typing 'Hello test message!' The send button appears enabled and ready for submission - this explicitly shows the send button appeared/enabled in response to user typing action"
+            }
+          ],
+          "explanation": "The send button behavior demonstrates adaptive rendering based on user action rather than being a default visible button. At 4.7s when the user first taps the message input field, no send button is mentioned. At 5.5s when the user types 'Hello', autocomplete suggestions appear but the send button state is not explicitly described. Critically, at 8.6s after the user completes typing 'Hello test message!', the timeline explicitly states 'The send button appears enabled and ready for submission.' This indicates the send button was not present by default but rather appeared/became enabled as a direct result of the user's typing action. This is classic adaptive UI behavior where the send button only renders or becomes actionable when there is content to send."
+        }
+      ]
+    }
+  ]
+}

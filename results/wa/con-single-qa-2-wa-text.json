@@ -1,0 +1,43 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 2,
+      "frameCount": 30
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "timestampSeconds": 5.5,
+              "frameIndex": 11,
+              "description": "Green send button is visible on the right side of the message input area, next to the text 'Hello' being typed"
+            },
+            {
+              "timestampSeconds": 8.5,
+              "frameIndex": 17,
+              "description": "Send button remains visible with green background and white arrow icon while user types 'Hello test message'"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 24,
+              "description": "Send button visible in the chat interface after message 'Hello test message!' has been sent, confirming its consistent presence"
+            }
+          ],
+          "explanation": "A send message button (green circular button with a white send icon) is clearly visible in the chat interface throughout the recording. The button appears in frames showing the 'Me' conversation thread, positioned in the bottom-right corner of the screen next to the text input field."
+        }
+      ]
+    }
+  ]
+}

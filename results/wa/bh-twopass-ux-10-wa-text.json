@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 10,
+      "frameCount": 150
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "timestampSeconds": 4.7,
+              "description": "User begins typing a message. The keyboard is active and the text input field shows 'Hello' with the on-screen keyboard visible. No mention of send button."
+            },
+            {
+              "timestampSeconds": 6.3,
+              "description": "User continues typing. The text input shows 'Hello m' with autocomplete suggestions appearing above the keyboard. Still no send button mentioned."
+            },
+            {
+              "timestampSeconds": 8.6,
+              "description": "User finishes typing. The message field now shows 'Hello test message' with autocomplete suggestions displayed. No send button mentioned yet."
+            },
+            {
+              "timestampSeconds": 9.4,
+              "description": "User completes typing the message. The text input field displays 'Hello test message!' with the send button (green arrow) now visible and enabled. This shows the send button appeared in response to user action."
+            },
+            {
+              "timestampSeconds": 11.8,
+              "description": "User sends the message. The message 'Hello test message!' appears in the chat, confirming the send button was successfully used after it dynamically appeared."
+            }
+          ],
+          "explanation": "The assertion states that the send button should not be the default button and should render based on user action. The evidence shows that initially (at 4.7s-8.6s) while the user is typing, there is no explicit mention of a send button being visible. At 9.4s, after the user completes typing 'Hello test message!', the timeline explicitly states 'the send button (green arrow) now visible and enabled.' This confirms that the send button appeared dynamically in response to the user's action of typing a message, rather than being present by default. The button only became visible once there was content in the text input field."
+        }
+      ]
+    }
+  ]
+}

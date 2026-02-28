@@ -1,0 +1,44 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 10,
+      "frameCount": 150
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "timestampSeconds": 3.9,
+              "description": "Chat screen loads showing conversation with 'Me'. Message composition field visible but no mention of send button being present initially."
+            },
+            {
+              "timestampSeconds": 5.5,
+              "description": "After user types 'Hello', the timeline explicitly states 'Green send button visible on right side of input field', indicating the button appeared in response to typing."
+            },
+            {
+              "timestampSeconds": 9.4,
+              "description": "Complete message typed with 'Green send button ready on right', confirming button remains visible during text input."
+            },
+            {
+              "timestampSeconds": 11.8,
+              "description": "After message is sent, 'Message input field cleared' indicates the field is empty again, presumably returning to state without send button."
+            }
+          ],
+          "explanation": "The assertion states that the send button should not be the default button but should render based on user action. The evidence shows that initially there is no visible send button mentioned when the chat screen first loads (timestamp 3.9s). The send button appears only after the user starts typing text (timestamp 5.5s shows 'Green send button visible on right side of input field'). This behavior continues through subsequent typing actions. The send button is rendered in response to the user's action of typing a message, not displayed by default when the message input field is empty. This matches the expected behavior described in the assertion."
+        }
+      ]
+    }
+  ]
+}

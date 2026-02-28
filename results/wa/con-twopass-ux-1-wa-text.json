@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 4,
+              "description": "Message input field is active with keyboard visible. Attachments and action buttons visible in input bar, implying send button is part of the input interface."
+            },
+            {
+              "timestampSeconds": 5,
+              "description": "Send button turns green, indicating message is ready to send - confirms button is visible and providing state feedback."
+            },
+            {
+              "timestampSeconds": 8,
+              "description": "Send button remains green and active after typing is complete, demonstrating continued visibility."
+            },
+            {
+              "timestampSeconds": 11,
+              "description": "Send button becomes darker green, indicating hover or pre-tap state - clear evidence of button visibility and interactive feedback."
+            },
+            {
+              "timestampSeconds": 12,
+              "description": "Message is sent successfully via the send button, confirming the button was visible and functional throughout the interaction."
+            }
+          ],
+          "explanation": "The send message button is clearly visible throughout the message composition flow. It first appears when the user enters the message input field at timestamp 4, and remains visible through the typing process (timestamps 5-11). The button shows clear visual feedback: it turns green when text is entered (timestamp 5), indicating it's ready to send, becomes darker green on hover/pre-tap (timestamp 11), and successfully sends the message (timestamp 12). The button's presence and state changes are consistently documented across multiple timeline entries."
+        }
+      ]
+    }
+  ]
+}

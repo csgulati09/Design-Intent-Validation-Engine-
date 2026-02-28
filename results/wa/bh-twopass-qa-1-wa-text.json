@@ -1,0 +1,56 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 4,
+              "description": "Chat view with empty message input field - no send button visible, only cursor present"
+            },
+            {
+              "timestampSeconds": 5,
+              "description": "User types 'Hello' - no explicit mention of send button yet appearing"
+            },
+            {
+              "timestampSeconds": 8,
+              "description": "User types 'Hello test message' - green send button becomes visible"
+            },
+            {
+              "timestampSeconds": 9,
+              "description": "User completes typing 'Hello test message!' - green send button is visible and ready to be tapped"
+            },
+            {
+              "timestampSeconds": 11,
+              "description": "Send button is in a pressed state (darker green), indicating user tapped it - demonstrating state change based on user action"
+            },
+            {
+              "timestampSeconds": 12,
+              "description": "Message sent successfully, input field now empty - send button no longer visible"
+            },
+            {
+              "timestampSeconds": 13,
+              "description": "Message input field remains empty with no send button visible"
+            }
+          ],
+          "explanation": "The send button behavior clearly demonstrates dynamic rendering based on user action. Initially, when the message input field is empty (frames at 4 seconds), there is no send button visible - confirming it's not a default always-present button. As the user types text (frames 5-10 seconds), the green send button appears and becomes visible only after content is entered. At 11 seconds, the button shows a pressed state (darker green) when tapped, further demonstrating interactive state changes. After sending (frame 12 seconds), the button disappears again as the input field becomes empty. This behavior confirms the send button renders conditionally based on user input rather than being a static default element."
+        }
+      ]
+    }
+  ]
+}

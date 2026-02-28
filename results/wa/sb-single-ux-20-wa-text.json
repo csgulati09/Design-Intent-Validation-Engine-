@@ -1,0 +1,58 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 20,
+      "frameCount": 301
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "We need to check how intuitive the send message button is",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+          "verdict": "pass",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "timestampSeconds": 0.8,
+              "frameIndex": 16,
+              "description": "User taps search bar and keyboard appears automatically, showing clear search field with focus - natural entry point for finding contacts"
+            },
+            {
+              "timestampSeconds": 2.4,
+              "frameIndex": 47,
+              "description": "Search results appear as user types 'Me', showing immediate feedback and autocomplete with 'Ask' button visible"
+            },
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 79,
+              "description": "User successfully navigates to 'Me' conversation thread, showing clear transition from search to chat"
+            },
+            {
+              "timestampSeconds": 5.5,
+              "frameIndex": 111,
+              "description": "Message composition in progress with 'Hello' typed - keyboard remains visible with autocomplete suggestions and green send button appears"
+            },
+            {
+              "timestampSeconds": 11.8,
+              "frameIndex": 237,
+              "description": "Message 'Hello test message!' fully composed with send button ready - clear affordance for sending"
+            },
+            {
+              "timestampSeconds": 14.2,
+              "frameIndex": 284,
+              "description": "Message successfully sent and appears in chat list with timestamp '11:10 PM' and checkmark, confirming successful completion of the flow"
+            }
+          ],
+          "explanation": "The flow of searching for a contact and sending a message follows a natural and intuitive pattern consistent with messaging app conventions. The user taps the search bar, types to find the 'Me' contact, accesses the conversation, and composes a message. The keyboard appears automatically when the message field is focused, autocomplete suggestions appear while typing, and the send button becomes prominently available when text is entered. The message is successfully sent and appears in the chat list with confirmation indicators. The overall experience demonstrates clear affordances, predictable interactions, and smooth transitions between steps."
+        }
+      ]
+    }
+  ]
+}

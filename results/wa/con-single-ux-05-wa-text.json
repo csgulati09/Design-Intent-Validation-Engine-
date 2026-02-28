@@ -1,0 +1,53 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 0.5,
+      "frameCount": 8
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 2,
+              "description": "Send button (green circular icon with arrow) visible on the right side of the message input field while 'H' is typed"
+            },
+            {
+              "timestampSeconds": 6,
+              "frameIndex": 3,
+              "description": "Send button remains visible as user types 'Hello tes' in the message field"
+            },
+            {
+              "timestampSeconds": 8,
+              "frameIndex": 4,
+              "description": "Send button clearly visible as complete message 'Hello test message' is typed"
+            },
+            {
+              "timestampSeconds": 10,
+              "frameIndex": 5,
+              "description": "Send button visible with completed message 'Hello test message!' ready to be sent"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 6,
+              "description": "After sending, the message appears in the chat thread with timestamp 11:10 PM, confirming the send button was functional and visible"
+            }
+          ],
+          "explanation": "The send message button (green circular button with arrow/send icon) is consistently visible throughout the message composition flow. It appears in frames 2-6 while the user is typing 'Hello test message!' in the message input field. The button is prominently displayed on the right side of the input area, making it easily accessible and clearly visible to the user."
+        }
+      ]
+    }
+  ]
+}

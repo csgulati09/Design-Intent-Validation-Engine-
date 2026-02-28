@@ -1,0 +1,58 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 5,
+      "frameCount": 75
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "timestampSeconds": 0,
+              "frameIndex": 0,
+              "description": "Initial chat list view - no send button visible, user is not in a text input state"
+            },
+            {
+              "timestampSeconds": 4.6,
+              "frameIndex": 23,
+              "description": "User has started typing in the Me chat - keyboard is visible but send button not yet prominent"
+            },
+            {
+              "timestampSeconds": 5.4,
+              "frameIndex": 27,
+              "description": "As user continues typing 'Hello', a green circular send button appears in the bottom-right corner of the screen, demonstrating dynamic rendering based on user input"
+            },
+            {
+              "timestampSeconds": 9.4,
+              "frameIndex": 47,
+              "description": "Message 'Hello test message!' is fully typed with green send button clearly visible and enabled"
+            },
+            {
+              "timestampSeconds": 12.4,
+              "frameIndex": 62,
+              "description": "Message has been sent ('Hello test message!' appears in chat at 11:10 PM), input field is now empty"
+            },
+            {
+              "timestampSeconds": 14.8,
+              "frameIndex": 74,
+              "description": "Back to chat list view - the sent message is visible in the Me chat preview, confirming the send button disappeared after sending"
+            }
+          ],
+          "explanation": "The assertion states that the send button should not be a default button but should render based on user action. The recording shows that when the message input is empty, there is no prominent send button visible (frames 0-4). As the user types 'Hello test message!' (frames 8-47), a green circular send button appears in the bottom-right corner (clearly visible from frame 27 onwards at t=5.4s). After the message is sent (frame 62 at t=12.4s), the send button disappears again and the input field is empty (frames 66-74). This behavior demonstrates that the send button dynamically renders in response to user input rather than being a persistent default button, confirming the assertion."
+        }
+      ]
+    }
+  ]
+}

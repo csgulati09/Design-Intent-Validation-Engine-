@@ -1,0 +1,64 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "We need to check how intuitive the send message button is",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+          "verdict": "pass",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "timestampSeconds": 0,
+              "description": "Starting point: Main WhatsApp Chats screen with prominent search bar labeled 'Ask Meta AI or Search' at top, providing clear entry point for contact search."
+            },
+            {
+              "timestampSeconds": 2,
+              "description": "Search functionality working as expected: User has entered 'Me' in search bar, and filtered results immediately display relevant chats including the target 'Me' chat at the top with message preview."
+            },
+            {
+              "timestampSeconds": 3,
+              "description": "Contact chat opened successfully: User is now in 'Me' chat thread with clear header showing contact name and previous message history visible, confirming successful navigation."
+            },
+            {
+              "timestampSeconds": 4,
+              "description": "Message composition initiated: Message input field is active (green cursor visible) with keyboard displayed and word suggestions ('I', 'The', 'I'm') appearing above keyboard, indicating ready state for typing."
+            },
+            {
+              "timestampSeconds": 5,
+              "description": "Typing in progress with helpful autocomplete: Text 'Hello' entered with real-time word suggestions updating to contextually relevant options ('\"Hello', 'Hello', waving hand emoji). Green send button now visible, clearly indicating how to send."
+            },
+            {
+              "timestampSeconds": 9,
+              "description": "Message composition complete: Full message 'Hello test message!' typed with cursor at end. Send button remains prominent and accessible on the right side of input field."
+            },
+            {
+              "timestampSeconds": 11,
+              "description": "Send action initiated: Send button visual state changes from green to darker green, providing immediate tactile feedback that the tap was registered."
+            },
+            {
+              "timestampSeconds": 12,
+              "description": "Message sent with clear confirmation: Message 'Hello test message!' now appears in chat thread with green bubble, timestamp '11:10 PM', and double checkmark (delivered status). Input field automatically cleared, ready for next message. Standard messaging app behavior maintained."
+            },
+            {
+              "timestampSeconds": 14,
+              "description": "Confirmation in chat list: User navigated back to main Chats screen where 'Me' chat now shows updated preview 'You: Hello test message!' with timestamp '11:10 PM', confirming message persistence and successful completion of the workflow."
+            }
+          ],
+          "explanation": "The recording demonstrates a natural and intuitive workflow for searching a contact and sending a message. The user successfully navigates from the main Chats screen to a search interface (0-2s), locates the 'Me' chat, opens it (3s), types a message with real-time autocomplete suggestions (4-9s), sends it with a clear visual button (11s), receives immediate feedback with the message appearing in the chat thread with delivery status (12s), and sees the updated preview in the main chat list (14s). The process follows expected mobile messaging patterns with clear visual affordances: visible search bar, keyboard with suggestions, distinct send button, and confirmation via message appearance. The only minor friction observed is the keyboard being present at initial screen (0s) which may indicate a previous interaction, but this doesn't impede the core flow. The entire sequence from search to send completion occurs in approximately 12 seconds with no visible errors, dead ends, or confusion."
+        }
+      ]
+    }
+  ]
+}

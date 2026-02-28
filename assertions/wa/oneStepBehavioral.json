@@ -1,0 +1,9 @@
+[
+    {
+      "id": "step1-assertion1",
+      "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+      "type": "behavioral",
+      "testStepId": "step1",
+      "testStepDescription": "Send message button should be visible"
+    }
+  ]

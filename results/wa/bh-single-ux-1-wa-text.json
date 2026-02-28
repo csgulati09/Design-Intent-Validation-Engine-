@@ -1,0 +1,43 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Send message button should be visible",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send button on the chat should be not be the default button whereas it should render as per the action taken by the user ",
+          "verdict": "pass",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 4,
+              "description": "Message composition area shows 'return' button on keyboard, no send button visible - default state before user input"
+            },
+            {
+              "timestampSeconds": 11,
+              "frameIndex": 11,
+              "description": "After typing 'Hello test message!', green circular send button appears in top-right corner, demonstrating dynamic rendering based on user action"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "Message successfully sent and appears in chat thread at 11:10 PM, send button returns to inactive state"
+            }
+          ],
+          "explanation": "The send button demonstrates dynamic, contextual behavior rather than being a default persistent button. Initially (frames 4-11), the keyboard shows a 'return' button in the bottom-right, not a send button. As the user types 'Hello test message!' the send button appears as a green circular icon in the top-right (frame 11), indicating it renders only when there's content to send. After sending (frame 12), the message appears in the chat and the send button returns to its inactive state. This confirms the send button is not a default element but renders based on user action (typing text)."
+        }
+      ]
+    }
+  ]
+}

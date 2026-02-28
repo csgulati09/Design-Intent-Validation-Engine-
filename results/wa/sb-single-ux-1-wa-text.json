@@ -1,0 +1,68 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "We need to check how intuitive the send message button is",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+          "verdict": "pass",
+          "confidence": 0.92,
+          "evidence": [
+            {
+              "timestampSeconds": 0,
+              "frameIndex": 0,
+              "description": "Starting point showing the main chats list with prominent search bar labeled 'Ask Meta AI or Search' at the top, providing clear entry point for search functionality"
+            },
+            {
+              "timestampSeconds": 1,
+              "frameIndex": 1,
+              "description": "Tapping search reveals intuitive filter categories (Photos, GIFs, Links, Videos, Documents, Audio, Polls, Events) with recognizable icons and a back arrow for navigation"
+            },
+            {
+              "timestampSeconds": 2,
+              "frameIndex": 2,
+              "description": "User types 'Me' in search field, and the interface immediately filters to show relevant chat results below, demonstrating responsive real-time search"
+            },
+            {
+              "timestampSeconds": 3,
+              "frameIndex": 3,
+              "description": "User successfully navigates into the 'Me' chat conversation thread, with keyboard automatically appearing at bottom - standard expected behavior"
+            },
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "As user types 'Hello', predictive text suggestions appear above keyboard ('Hello', 'Hello', waving emoji), showing helpful intelligent assistance"
+            },
+            {
+              "timestampSeconds": 9,
+              "frameIndex": 9,
+              "description": "Message composition complete with 'Hello test message!' - send button (green arrow) is clearly visible and in expected position, providing clear affordance for sending"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "Message successfully sent and appears in chat bubble with timestamp '11:10 PM' and checkmark delivery indicator, providing clear feedback that action completed"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "User returns to main chats list where 'Me' conversation now shows the sent message preview, confirming successful completion of the entire flow"
+            }
+          ],
+          "explanation": "The user flow for searching a contact and sending a message is intuitive and follows standard messaging app conventions. The search functionality is prominently placed at the top with clear affordance ('Ask Meta AI or Search'). Tapping it reveals a familiar filter view by content type. When the user types 'Me', the interface immediately shows relevant results and allows direct access to the chat. The keyboard appearance is automatic and expected. Typing the message 'Hello test message!' is straightforward with standard keyboard interactions and predictive text suggestions. The send button transitions from a sticker/camera icon to a clear green arrow send button when text is entered, providing good feedback. The message appears immediately in the chat with timestamp and delivery status (checkmark). The overall flow feels natural with minimal cognitive load - each step follows logically from the previous one with clear visual feedback and standard interaction patterns."
+        }
+      ]
+    }
+  ]
+}

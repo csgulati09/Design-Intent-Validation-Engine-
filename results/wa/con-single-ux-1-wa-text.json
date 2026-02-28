@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "Green send button clearly visible in bottom-right corner while composing 'Hello' message"
+            },
+            {
+              "timestampSeconds": 8,
+              "frameIndex": 8,
+              "description": "Send button visible while typing 'Hello test message' - button remains consistently positioned"
+            },
+            {
+              "timestampSeconds": 11,
+              "frameIndex": 11,
+              "description": "Send button still visible with completed message 'Hello test message!' ready to be sent"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "Message successfully sent and visible in chat list, confirming the send button was functional and visible throughout"
+            }
+          ],
+          "explanation": "Throughout the video sequence, the send message button is consistently visible in the chat interface. The button appears as a green circular icon with a send arrow/paper plane symbol, positioned in the bottom-right area of the message composition area. It's visible in multiple frames both when the keyboard is displayed (frames 4-11) and when the user returns to the chat list (frame 14 shows the message was successfully sent). The button's visibility is clear and consistent across the entire flow."
+        }
+      ]
+    }
+  ]
+}

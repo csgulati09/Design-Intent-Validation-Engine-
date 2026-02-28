@@ -1,0 +1,73 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 20,
+      "frameCount": 301
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "We need to check how intuitive the send message button is",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+          "verdict": "pass",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "timestampSeconds": 0.8,
+              "frameIndex": 16,
+              "description": "Search interface appears after user taps the search bar, showing a categorized list including Photos, GIFs, Links, Videos, Documents, Audio, Polls, and Events with a visible keyboard at the bottom"
+            },
+            {
+              "timestampSeconds": 2.4,
+              "frameIndex": 47,
+              "description": "User has typed 'Me' in the search field with an 'Ask' button visible on the right side of the search bar"
+            },
+            {
+              "timestampSeconds": 3.1,
+              "frameIndex": 63,
+              "description": "Search results displayed showing 'Me' chat with subtitle 'You: Acct Statement.pdf · 17 pages' and other filtered results below"
+            },
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 79,
+              "description": "Chat conversation opened showing previous messages including flight tickets (DEL-BOM.pdf, BOM-DEL.pdf) and an account statement, with keyboard visible at bottom"
+            },
+            {
+              "timestampSeconds": 5.5,
+              "frameIndex": 111,
+              "description": "User begins typing message 'Hello' in the message input field at the bottom of the chat screen"
+            },
+            {
+              "timestampSeconds": 8.7,
+              "frameIndex": 174,
+              "description": "Message composition in progress showing 'Hello test message' with keyboard displaying predictive text suggestions including 'mes', 'message', and 'messages'"
+            },
+            {
+              "timestampSeconds": 11.8,
+              "frameIndex": 237,
+              "description": "Message 'Hello test message!' sent successfully, appearing in a green bubble under 'Today' section with timestamp 11:10 PM"
+            },
+            {
+              "timestampSeconds": 12.7,
+              "frameIndex": 253,
+              "description": "Sent message displays with double checkmark indicator showing successful delivery at 11:10 PM"
+            },
+            {
+              "timestampSeconds": 14.2,
+              "frameIndex": 284,
+              "description": "User returned to main Chats list where 'Me' conversation shows at the top with preview 'You: Hello test message!' and timestamp 11:10 PM, confirming successful message send"
+            }
+          ],
+          "explanation": "The recording demonstrates a natural and intuitive flow for searching a contact and sending a message in WhatsApp. The user successfully: (1) accessed the search functionality from the Chats screen at t=0.8s, (2) typed 'Me' to search for a contact at t=2.4s, (3) selected the search result at t=3.1s, (4) navigated to the chat conversation at t=4.0s, (5) typed the message 'Hello test message!' between t=5.5s and t=9.4s with the keyboard providing predictive text suggestions, and (6) the message was successfully sent as confirmed by the green checkmark at t=12.7s. The entire process follows standard messaging app patterns with clear visual feedback at each step, including the search interface with categorized filters, the keyboard with autocomplete suggestions, and message delivery indicators. The user returned to the chat list at t=14.2s where the sent message is visible as the most recent message in 'Me' chat."
+        }
+      ]
+    }
+  ]
+}

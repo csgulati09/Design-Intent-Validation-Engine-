@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 2,
+      "frameCount": 30
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 8,
+              "description": "Send button (green circle with arrow) visible in bottom-right while keyboard is active and user is in the 'Me' chat"
+            },
+            {
+              "timestampSeconds": 5.5,
+              "frameIndex": 11,
+              "description": "Send button remains visible as user types 'Hello' in the message input field"
+            },
+            {
+              "timestampSeconds": 10,
+              "frameIndex": 20,
+              "description": "Send button clearly visible as complete message 'Hello test message!' is shown in the input field"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 24,
+              "description": "After message is sent, the message appears in the chat thread confirming the send button was functional"
+            }
+          ],
+          "explanation": "The send message button (green circular button with a paper plane icon) is consistently visible throughout the message composition flow. It appears in frames 8-27 when the user is in the 'Me' conversation view typing a message. The button is clearly visible in the bottom-right corner of the screen, positioned to the right of the text input area, and maintains standard WhatsApp styling with a green background and white send icon."
+        }
+      ]
+    }
+  ]
+}

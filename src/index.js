@@ -76,6 +76,7 @@ const keepFrames = argv.keepFrames;
 const framesDir = path.join(process.cwd(), 'tmp', 'frames-' + Date.now());
 
 async function run() {
+  const startTimestamp = Date.now();
   console.log('Loading assertions...');
   const assertions = loadAssertions(assertionsPath);
   if (assertions.length === 0) {
@@ -171,6 +172,9 @@ async function run() {
       console.warn('Could not remove temp frames dir:', e.message);
     }
   }
+  const endTimestamp = Date.now();
+  const duration = endTimestamp - startTimestamp;
+  console.log('Validation completed in', duration, 'milliseconds');
 }
 
 run().catch((err) => {

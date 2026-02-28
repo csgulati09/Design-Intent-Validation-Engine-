@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 5,
+              "description": "Green send button appears on the right side of the message input field after user types 'Hello'"
+            },
+            {
+              "timestampSeconds": 8,
+              "description": "Green send button visible on right as user types 'Hello test message'"
+            },
+            {
+              "timestampSeconds": 10,
+              "description": "Send button visible and active (green) with complete message 'Hello test message!' ready to send"
+            },
+            {
+              "timestampSeconds": 11,
+              "description": "User appears to tap send button, button color changes slightly darker indicating interaction"
+            },
+            {
+              "timestampSeconds": 12,
+              "description": "Message successfully sent, confirming the send button was functional and accessible"
+            }
+          ],
+          "explanation": "The send message button is visible and documented at multiple timestamps throughout the recording. It first appears when the user types 'Hello' at 5 seconds, showing as a green send button on the right side of the message input field. The button remains visible and active through timestamps 6-11 seconds as the user continues typing. At timestamp 11 seconds, the user interacts with the send button (indicated by color change), and at timestamp 12 seconds, the message is successfully sent, confirming the button was both visible and functional."
+        }
+      ]
+    }
+  ]
+}

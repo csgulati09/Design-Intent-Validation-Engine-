@@ -1,0 +1,40 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 2,
+      "frameCount": 30
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 8.5,
+              "description": "Timeline states: 'Green send button visible' while user is composing the message 'Hello test message!'"
+            },
+            {
+              "timestampSeconds": 10,
+              "description": "Timeline confirms: 'Send button remains prominently green and ready' after message composition is complete"
+            },
+            {
+              "timestampSeconds": 12,
+              "description": "Message successfully sent, demonstrating the send button was both visible and functional, resulting in the message appearing in the chat thread with delivery confirmation"
+            }
+          ],
+          "explanation": "The send message button is clearly visible and identifiable throughout the message composition process. The timeline explicitly mentions a 'green send button visible' at 8.5 seconds and describes it as 'prominently green and ready' at 10 seconds. This indicates the send button maintains consistent visibility while the user composes the message, which is the expected UX behavior."
+        }
+      ]
+    }
+  ]
+}

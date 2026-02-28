@@ -1,0 +1,43 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "User is searching for a contact and typing a message in the chat to send it",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Send message button should be visible",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "Green circular send button with arrow icon visible in bottom-right corner while user is composing message 'Hello'"
+            },
+            {
+              "timestampSeconds": 9,
+              "frameIndex": 9,
+              "description": "Send button remains visible as user completes typing 'Hello test message!' with green circular appearance"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "After message is sent, composition toolbar remains visible at bottom with icons including the send functionality"
+            }
+          ],
+          "explanation": "A send message button is clearly visible throughout the recorded frames. Initially (frames 5-11), it appears as a green circular button with a right-pointing arrow/play icon in the bottom-right corner of the message composition area. After the message is sent (frame 12 onwards), the button returns to its default state in the composition toolbar but remains visible and accessible."
+        }
+      ]
+    }
+  ]
+}
