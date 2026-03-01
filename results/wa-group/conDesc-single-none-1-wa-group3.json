@@ -1,0 +1,63 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/group.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 44
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Updating a group description",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "On successful creation of the group, the user should be able to update the group description. The group description should be updated successfully and the user should be able to see the updated group description in the group info screen",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 18,
+              "frameIndex": 4,
+              "description": "Group successfully created - user reaches the group chat view with 'Test group' header visible, establishing baseline state"
+            },
+            {
+              "timestampSeconds": 23,
+              "frameIndex": 5,
+              "description": "User taps group header to access Group info settings - demonstrates discoverable navigation pattern"
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 6,
+              "description": "User taps 'Add group description' field - clear affordance and field labeling enables task initiation"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 8,
+              "description": "User completes typing 'Adding a dummy description' - text entry works as expected with keyboard visible"
+            },
+            {
+              "timestampSeconds": 36,
+              "frameIndex": 9,
+              "description": "User taps Save button and returns to Group info page - action completion with immediate feedback"
+            },
+            {
+              "timestampSeconds": 38,
+              "frameIndex": 10,
+              "description": "Group info page displays with the updated description visible - confirms successful save and persistence of data"
+            },
+            {
+              "timestampSeconds": 41,
+              "frameIndex": 11,
+              "description": "Group chat shows system message 'You changed the group description. Tap to view.' - excellent feedback mechanism confirming the action"
+            }
+          ],
+          "explanation": "From a UX perspective, the group description update flow demonstrates good usability and clear feedback. After creating the group, the user successfully navigates to group settings by tapping the group header (discoverable affordance). The 'Add group description' field is clearly labeled and tappable, providing good discoverability. The system provides immediate visual feedback during text entry with a keyboard and a Save button that appears actionable. Upon saving, the interface transitions back to show the updated description in the group info screen, confirming the change was successful. The flow concludes with a system message in the chat indicating the description was changed, which provides excellent feedback and status visibility. The entire interaction follows a predictable pattern with clear entry points, confirmation of actions, and system status updates. The only minor uncertainty is whether the description displays exactly as entered (though the timeline confirms it appears in the group info view)."
+        }
+      ]
+    }
+  ]
+}

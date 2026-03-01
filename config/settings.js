@@ -11,8 +11,10 @@ const DEFAULT_SETTINGS = {
   fps: 1,
   /** Persona for the VLM: 'ux-designer' | 'qa-engineer' | 'none' */
   persona: 'ux-designer',
-  /** Evaluation strategy: 'single' (one call per assertion) | 'batch' (all in one call) | 'two-pass' (describe then evaluate). */
+  /** Evaluation strategy: 'single' (one call per assertion) | 'batch' (all in one call) | 'two-pass' (describe then evaluate). Used only when useAgent is false. */
   strategy: 'two-pass',
+  /** Use agentic pipeline (orchestrator + tools). When true, strategy is ignored and the orchestrator uses describe_timeline then evaluate_assertions. */
+  useAgent: true,
   /** Claude model ID. */
   model: 'claude-sonnet-4-5',
   /** Max tokens for Claude responses. */
@@ -53,6 +55,9 @@ function loadSettings(overrides = {}) {
   }
   if (process.env.VALIDATOR_STRATEGY) {
     settings.strategy = process.env.VALIDATOR_STRATEGY;
+  }
+  if (process.env.VALIDATOR_USE_AGENT !== undefined) {
+    settings.useAgent = process.env.VALIDATOR_USE_AGENT === 'true' || process.env.VALIDATOR_USE_AGENT === '1';
   }
 
   const merged = { ...settings, ...overrides };

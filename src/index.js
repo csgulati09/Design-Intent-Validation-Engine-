@@ -12,6 +12,7 @@ const { loadSettings, SUPPORTED_STRATEGIES } = require('../config/settings');
 const { extractFrames } = require('./videoProcessor');
 const { loadAssertions, groupByTestStep } = require('./assertions');
 const { runPipeline } = require('./claudeAgent');
+const { runAgenticPipeline } = require('./agents/orchestrator');
 const { appendResultsToCsv } = require('./csvResults');
 
 const argv = yargs(hideBin(process.argv))
@@ -52,6 +53,15 @@ const argv = yargs(hideBin(process.argv))
     default: false,
     description: 'Keep extracted frames on disk after run',
   })
+  .option('agent', {
+    type: 'boolean',
+    description: 'Use agentic pipeline (orchestrator + tools). Omit to use validator.config.json useAgent; set false for legacy.',
+  })
+  .option('legacy', {
+    type: 'boolean',
+    default: false,
+    description: 'Use legacy pipeline (direct two-pass/batch/single). Overrides --agent when set.',
+  })
   .help()
   .argv;
 
@@ -59,6 +69,8 @@ const overrides = {};
 if (argv.fps != null) overrides.fps = argv.fps;
 if (argv.persona != null) overrides.persona = argv.persona;
 if (argv.strategy != null) overrides.strategy = argv.strategy;
+if (argv.agent !== undefined) overrides.useAgent = argv.agent;
+if (argv.legacy) overrides.useAgent = false;
 
 const settings = loadSettings(overrides);
 const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -94,16 +106,31 @@ async function run() {
     process.exit(1);
   }
  
-  console.log('Running Claude %s pipeline (persona=%s)...', settings.strategy, settings.persona);
-  const { timeline, evaluations } = await runPipeline({
-    apiKey,
-    model: settings.model,
-    maxTokens: settings.maxTokens,
-    persona: settings.persona,
-    strategy: settings.strategy,
-    frames,
-    assertions,
-  });
+  const useAgentic = settings.useAgent !== false;
+
+  if (useAgentic) {
+    console.log('Running agentic pipeline (orchestrator + tools, persona=%s)...', settings.persona);
+    var pipelineResult = await runAgenticPipeline({
+      apiKey,
+      model: settings.model,
+      maxTokens: settings.maxTokens,
+      persona: settings.persona,
+      frames,
+      assertions,
+    });
+  } else {
+    console.log('Running Claude %s pipeline (persona=%s)...', settings.strategy, settings.persona);
+    var pipelineResult = await runPipeline({
+      apiKey,
+      model: settings.model,
+      maxTokens: settings.maxTokens,
+      persona: settings.persona,
+      strategy: settings.strategy,
+      frames,
+      assertions,
+    });
+  }
+  const { evaluations } = pipelineResult;
 
   const steps = groupByTestStep(assertions);
   const testSteps = steps.map((step) => {
@@ -158,6 +185,7 @@ async function run() {
     // }));
     // appendResultsToCsv(csvPath, csvRows);
     // console.log('Appended', csvRows.length, 'row(s) to', csvPath);
+  
   } else {
     console.log(json);
   }

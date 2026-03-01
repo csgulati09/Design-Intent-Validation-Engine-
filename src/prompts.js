@@ -99,8 +99,8 @@ function getPersonaOutputFormat(persona) {
   if (persona === 'ux-designer') {
     return {
       explanationInstruction: 'Write the explanation from a UX perspective: mention clarity, feedback, flow, and usability. Call out what worked or was confusing for the user.',
-      evidenceInstruction: 'Include moments that matter for UX (screens, feedback, transitions). frameIndex is optional.',
-      evidenceSchema: 'evidence: [ { "timestampSeconds": number, "frameIndex": number (optional), "description": string } ]',
+      evidenceInstruction: 'Include moments that matter for UX (screens, feedback, transitions). frameIndex is required.',
+      evidenceSchema: 'evidence: [ { "timestampSeconds": number, "frameIndex": number (required), "description": string } ]',
     };
   }
   return {

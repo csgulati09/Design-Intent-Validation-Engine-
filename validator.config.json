@@ -1,5 +1,6 @@
 {
   "fps": 1,
-  "persona": "none",
+  "persona": "ux-designer",
+  "useAgent": true,
   "strategy": "single"
 }

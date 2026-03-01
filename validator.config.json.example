@@ -1,5 +1,6 @@
 {
   "fps": 1,
   "persona": "ux-designer",
-  "strategy": "two-pass"
+  "strategy": "two-pass",
+  "useAgent": true,
 }
