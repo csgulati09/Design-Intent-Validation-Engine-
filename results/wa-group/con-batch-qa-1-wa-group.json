@@ -1,0 +1,125 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/group.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 44
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Creating a group",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "The user should be able to create a group",
+          "verdict": "pass",
+          "confidence": 1,
+          "evidence": [
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "User enters 'Add members' screen showing contact selection interface"
+            },
+            {
+              "timestampSeconds": 9,
+              "frameIndex": 9,
+              "description": "User selects 'Minmin' as group member, shown in overlay with 'MEMBERS: 1 OF 1,023'"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "User types 'Test group' in the group name field on 'New group' screen"
+            },
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "Loading indicator appears in top-right corner as group is being created"
+            },
+            {
+              "timestampSeconds": 18,
+              "frameIndex": 18,
+              "description": "Group successfully created - chat screen shows 'You created this group' with 'Group · 2 members' confirmation"
+            }
+          ],
+          "explanation": "The user successfully created a group named 'Test group'. The creation flow is visible starting at t=5s when the 'Add members' screen appears, progressing through member selection (t=7s-9s), group naming (t=11s-14s), and creation completion (t=16s-18s). The final confirmation is shown at t=18s with the group chat screen displaying 'You created this group' with '2 members'."
+        },
+        {
+          "id": "step1-assertion2",
+          "text": "The user should be able to add a member to the group",
+          "verdict": "pass",
+          "confidence": 1,
+          "evidence": [
+            {
+              "timestampSeconds": 7,
+              "frameIndex": 7,
+              "description": "User searches for 'Min' in the search field on 'Add members' screen"
+            },
+            {
+              "timestampSeconds": 9,
+              "frameIndex": 9,
+              "description": "User selects 'Minmin' contact - overlay shows selection with 'MEMBERS: 1 OF 1,023' and Minmin's profile visible"
+            },
+            {
+              "timestampSeconds": 18,
+              "frameIndex": 18,
+              "description": "Group chat header shows 'Test group' with subtitle 'Minmin, You', confirming member addition. Group info states 'Group · 2 members'"
+            }
+          ],
+          "explanation": "The user successfully added a member ('Minmin') to the newly created group. This is evidenced by the member selection at t=7s-9s where 'Minmin' is selected from the contacts list, and confirmed in the final group screen at t=18s showing '2 members' (the creator 'You' and 'Minmin'). The member is visible in the group subtitle 'Minmin, You' at t=18s."
+        },
+        {
+          "id": "step1-assertion3",
+          "text": "The user should be able to send a message to the group",
+          "verdict": "fail",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 18,
+              "frameIndex": 18,
+              "description": "Group chat screen opens with message input bar visible at bottom, but no message is typed or sent"
+            },
+            {
+              "timestampSeconds": 41,
+              "frameIndex": 41,
+              "description": "System notification visible stating 'You changed the group description. Tap to view.' - this is a system message, not a user message"
+            },
+            {
+              "timestampSeconds": 43,
+              "frameIndex": 43,
+              "description": "Final frame shows no user messages in the chat thread, only system notifications and group creation info"
+            }
+          ],
+          "explanation": "The user did not send a message to the group. While the group was successfully created and the chat screen is visible from t=18s onwards, no text message composition or sending is observed. The message input area at the bottom of the screen remains unused throughout the recording. At t=41s-43s, only a system notification 'You changed the group description. Tap to view.' is visible, which is not a user-sent message to the group."
+        },
+        {
+          "id": "step1-assertion4",
+          "text": "The user should be able to initiate a video call to the group",
+          "verdict": "fail",
+          "confidence": 1,
+          "evidence": [
+            {
+              "timestampSeconds": 18,
+              "frameIndex": 18,
+              "description": "Video call button visible in top-right corner of group chat but not activated"
+            },
+            {
+              "timestampSeconds": 23,
+              "frameIndex": 23,
+              "description": "Group info screen shows 'Video' button among action buttons, but no interaction observed"
+            },
+            {
+              "timestampSeconds": 43,
+              "frameIndex": 43,
+              "description": "Final frame shows video call button still present but unused - no call was initiated"
+            }
+          ],
+          "explanation": "The user did not initiate a video call to the group. While the video call button is visible in multiple frames (t=18s, t=41s-43s in the top-right corner of the group chat), and also on the group info screen (t=23s, t=36s, t=38s), there is no evidence of the user tapping this button or a video call being initiated. No video call interface, connection screen, or related loading indicators appear throughout the recording."
+        }
+      ]
+    }
+  ]
+}

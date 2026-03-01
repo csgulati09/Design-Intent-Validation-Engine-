@@ -1,0 +1,30 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "The user should be able to create a group",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Creating a group"
+    },
+    {
+        "id": "step1-assertion2",
+        "text": "The user should be able to add a member to the group",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Adding a member"
+    },
+    {
+        "id": "step1-assertion3",
+        "text": "The user should be able to send a message to the group",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Send a message to the group"
+    },
+    {
+        "id": "step1-assertion4",
+        "text": "The user should be able to initiate a video call to the group",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Initiate a video call"
+    }
+]

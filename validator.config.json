@@ -1,5 +1,5 @@
 {
   "fps": 1,
-  "persona": "ux-designer",
-  "strategy": "batch"
+  "persona": "none",
+  "strategy": "single"
 }

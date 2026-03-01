@@ -1,0 +1,9 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "On successful creation of the group, the user should be able to update the group description. The group description should be updated successfully and the user should be able to see the updated group description in the group info screen",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Updating a group description"
+    }
+]

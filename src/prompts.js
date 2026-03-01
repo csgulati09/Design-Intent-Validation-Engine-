@@ -64,8 +64,50 @@ function getPersonaBlock(persona) {
   Use precise, neutral, test-report language suitable for a bug report.
   `;
   }
+
+  if (persona === 'none') {
+    return `
+  You are a neutral observer summarizing what happens in the recording.
   
+  Report factually what the user did and what was visible on screen, without test-report jargon or UX analysis.
+  Keep explanations brief and narrative. Do not cite timestamps in the explanation text; reserve precise times for the evidence array only.
+  `;
+  }
+
   return '';
+}
+
+/**
+ * Persona-specific output format for explanation and evidence.
+ * Ensures clearly different structure and style per persona.
+ */
+function getPersonaOutputFormat(persona) {
+  if (persona === 'qa-engineer') {
+    return {
+      explanationInstruction: 'Write the explanation in test-report style: one-line outcome summary, then key observations with exact timestamps (e.g. "At t=27s...", "Between t=29s and t=34s..."). Use passive voice. Do not speculate.',
+      evidenceInstruction: 'Each evidence entry MUST include frameIndex. Describe only what is objectively visible (exact text, labels, UI state).',
+      evidenceSchema: 'evidence: [ { "timestampSeconds": number, "frameIndex": number (required), "description": string } ]',
+    };
+  }
+  if (persona === 'none') {
+    return {
+      explanationInstruction: 'Write the explanation as a short narrative (2–4 sentences): what the user did and what happened. Do not cite timestamps in the explanation; do not use test-report language.',
+      evidenceInstruction: 'Include timestampSeconds and description only; do NOT include frameIndex. Descriptions can be high-level (e.g. "User added the group description").',
+      evidenceSchema: 'evidence: [ { "timestampSeconds": number, "description": string } ] (omit frameIndex)',
+    };
+  }
+  if (persona === 'ux-designer') {
+    return {
+      explanationInstruction: 'Write the explanation from a UX perspective: mention clarity, feedback, flow, and usability. Call out what worked or was confusing for the user.',
+      evidenceInstruction: 'Include moments that matter for UX (screens, feedback, transitions). frameIndex is optional.',
+      evidenceSchema: 'evidence: [ { "timestampSeconds": number, "frameIndex": number (optional), "description": string } ]',
+    };
+  }
+  return {
+    explanationInstruction: 'Give a brief explanation and evidence with timestamp and description.',
+    evidenceInstruction: 'Include timestampSeconds and description; frameIndex is optional.',
+    evidenceSchema: 'evidence: [ { "timestampSeconds": number, "frameIndex": number (optional), "description": string } ]',
+  };
 }
 
 /**
@@ -115,10 +157,14 @@ function getTimelineUserPrompt() {
  */
 function getEvaluationSystemPrompt(persona) {
   const personaBlock = getPersonaBlock(persona);
+  const format = getPersonaOutputFormat(persona);
   return [
     personaBlock,
     'You evaluate natural-language UX assertions against a timeline description of a mobile app video.',
-    'For each assertion, output: verdict (pass | fail | uncertain), confidence (0-1), explanation, and evidence (array of { timestampSeconds, frameIndex?, description }).',
+    'For each assertion, output: verdict (pass | fail | uncertain), confidence (0-1), explanation, and evidence.',
+    'Explanation: ' + format.explanationInstruction,
+    'Evidence: ' + format.evidenceInstruction,
+    'Evidence schema: ' + format.evidenceSchema + '.',
     'Output valid JSON only, no markdown code fences.',
   ].filter(Boolean).join('\n');
 }
@@ -128,11 +174,15 @@ function getEvaluationSystemPrompt(persona) {
  */
 function getBatchSystemPrompt(persona) {
   const personaBlock = getPersonaBlock(persona);
+  const format = getPersonaOutputFormat(persona);
   return [
     personaBlock,
     'You are evaluating natural-language UX assertions against a sequence of frames from a mobile app screen recording.',
-    'Watch the frames in order (each has a timestamp). For each assertion, decide pass/fail/uncertain, give confidence (0-1), a brief explanation, and evidence (timestamp and description of the relevant moment).',
-    'Output valid JSON only, no markdown code fences: { "evaluations": [ { "assertionId": string, "verdict": "pass"|"fail"|"uncertain", "confidence": number, "explanation": string, "evidence": [ { "timestampSeconds": number, "frameIndex": number (optional), "description": string } ] } ] }.',
+    'Watch the frames in order (each has a timestamp). For each assertion, decide pass/fail/uncertain, give confidence (0-1), explanation, and evidence.',
+    'Explanation: ' + format.explanationInstruction,
+    'Evidence: ' + format.evidenceInstruction,
+    'Evidence schema: ' + format.evidenceSchema + '.',
+    'Output valid JSON only, no markdown code fences: { "evaluations": [ { "assertionId": string, "verdict": "pass"|"fail"|"uncertain", "confidence": number, "explanation": string, "evidence": [ ... ] } ] }.',
   ].filter(Boolean).join('\n');
 }
 
@@ -152,11 +202,15 @@ function getBatchUserPromptIntro() {
  */
 function getSingleAssertionSystemPrompt(persona) {
   const personaBlock = getPersonaBlock(persona);
+  const format = getPersonaOutputFormat(persona);
   return [
     personaBlock,
     'You are evaluating one natural-language UX assertion against a sequence of frames from a mobile app screen recording.',
-    'Watch the frames in order (each has a timestamp). Decide pass/fail/uncertain for this assertion, give confidence (0-1), a brief explanation, and evidence (timestamp and description of the relevant moment).',
-    'Output valid JSON only, no markdown code fences: { "evaluations": [ { "assertionId": string, "verdict": "pass"|"fail"|"uncertain", "confidence": number, "explanation": string, "evidence": [ { "timestampSeconds": number, "frameIndex": number (optional), "description": string } ] } ] }. Exactly one object in the evaluations array.',
+    'Watch the frames in order (each has a timestamp). Decide pass/fail/uncertain for this assertion, give confidence (0-1), explanation, and evidence.',
+    'Explanation: ' + format.explanationInstruction,
+    'Evidence: ' + format.evidenceInstruction,
+    'Evidence schema: ' + format.evidenceSchema + '. Exactly one object in the evaluations array.',
+    'Output valid JSON only, no markdown code fences: { "evaluations": [ { "assertionId": string, "verdict": "pass"|"fail"|"uncertain", "confidence": number, "explanation": string, "evidence": [ ... ] } ] }.',
   ].filter(Boolean).join('\n');
 }
 

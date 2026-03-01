@@ -1,0 +1,53 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/group.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 44
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Updating a group description",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "On successful creation of the group, the user should be able to update the group description. The group description should be updated successfully and the user should be able to see the updated group description in the group info screen",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "User navigates to 'Group description' editing screen showing an empty text field with placeholder 'Add group description'"
+            },
+            {
+              "timestampSeconds": 29,
+              "frameIndex": 29,
+              "description": "User begins typing 'Adding a' in the group description field with keyboard visible"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "Complete text 'Adding a dummy description' is entered in the description field"
+            },
+            {
+              "timestampSeconds": 36,
+              "frameIndex": 36,
+              "description": "Group info screen displays the updated description 'Adding a dummy description' below the group name and member count"
+            },
+            {
+              "timestampSeconds": 41,
+              "frameIndex": 41,
+              "description": "Chat screen shows system message 'You changed the group description. Tap to view.' confirming the successful update"
+            }
+          ],
+          "explanation": "The recording demonstrates successful group creation followed by updating the group description. At t=27s, the user accesses the 'Group description' screen. Between t=29s and t=34s, the user types 'Adding a dummy description' into the description field. At t=36s, the updated description 'Adding a dummy description' is visible in the Group info screen. At t=41s, a system notification confirms 'You changed the group description. Tap to view.' and the description remains visible in the group info screen at t=36s and t=38s, confirming the update was successful and persisted."
+        }
+      ]
+    }
+  ]
+}

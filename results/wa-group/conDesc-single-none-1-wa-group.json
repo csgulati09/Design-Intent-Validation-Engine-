@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/group.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 44
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Updating a group description",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "On successful creation of the group, the user should be able to update the group description. The group description should be updated successfully and the user should be able to see the updated group description in the group info screen",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 18,
+              "description": "Group 'Test group' is successfully created with 2 members (Minmin and You)"
+            },
+            {
+              "timestampSeconds": 27,
+              "description": "User opens the 'Group description' screen to add a description"
+            },
+            {
+              "timestampSeconds": 34,
+              "description": "User completes typing 'Adding a dummy description' in the description field"
+            },
+            {
+              "timestampSeconds": 36,
+              "description": "Back in Group info screen, the description 'Adding a dummy description' is now visible and persisted"
+            },
+            {
+              "timestampSeconds": 41,
+              "description": "System message confirms 'You changed the group description. Tap to view.' indicating successful update"
+            }
+          ],
+          "explanation": "The video demonstrates successful creation of a group called 'Test group' followed by adding and updating the group description. The user navigates to the group description screen (frame at 27s), types 'Adding a dummy description' (frames 29s-34s), saves it (frame 36s), and then can view the updated description both in the group info screen (frame 36s shows 'Adding a dummy description') and in the chat view (frame 41s shows a system message 'You changed the group description. Tap to view.'). The description is successfully persisted and visible in the group info section."
+        }
+      ]
+    }
+  ]
+}

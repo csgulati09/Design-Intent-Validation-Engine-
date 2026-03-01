@@ -195,7 +195,7 @@ function buildSingleAssertionContent(frames, assertion) {
 async function runBatchPipeline(opts) {
   const { apiKey, model, maxTokens, persona, frames, assertions } = opts;
   const client = new Anthropic({ apiKey });
-  const effectivePersona = persona === 'none' ? '' : persona;
+  const effectivePersona = persona;
 
   const content = buildBatchContent(frames, assertions);
   const system = getBatchSystemPrompt(effectivePersona);
@@ -229,7 +229,7 @@ async function runBatchPipeline(opts) {
 async function runSinglePipeline(opts) {
   const { apiKey, model, maxTokens, persona, frames, assertions } = opts;
   const client = new Anthropic({ apiKey });
-  const effectivePersona = persona === 'none' ? '' : persona;
+  const effectivePersona = persona;
   const system = getSingleAssertionSystemPrompt(effectivePersona);
 
   const byId = new Map();
@@ -279,7 +279,7 @@ async function runTwoPassPipeline(opts) {
   } = opts;
 
   const client = new Anthropic({ apiKey });
-  const effectivePersona = persona === 'none' ? '' : persona;
+  const effectivePersona = persona;
 
   const { timeline } = await describeTimeline({
     client,

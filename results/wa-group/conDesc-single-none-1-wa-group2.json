@@ -1,0 +1,64 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/group.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 44
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Updating a group description",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "On successful creation of the group, the user should be able to update the group description. The group description should be updated successfully and the user should be able to see the updated group description in the group info screen",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 5,
+              "description": "User initiated group creation by accessing the Add members screen"
+            },
+            {
+              "timestampSeconds": 7,
+              "description": "User searched for and selected contact 'Minmin' to add to the group"
+            },
+            {
+              "timestampSeconds": 14,
+              "description": "User entered group name 'Test group'"
+            },
+            {
+              "timestampSeconds": 18,
+              "description": "Group was successfully created and group chat screen appeared"
+            },
+            {
+              "timestampSeconds": 27,
+              "description": "User accessed the group description editing screen"
+            },
+            {
+              "timestampSeconds": 34,
+              "description": "User completed typing description 'Adding a dummy description'"
+            },
+            {
+              "timestampSeconds": 36,
+              "description": "User saved the description and returned to group info"
+            },
+            {
+              "timestampSeconds": 38,
+              "description": "Updated description 'Adding a dummy description' visible in group info screen"
+            },
+            {
+              "timestampSeconds": 41,
+              "description": "Notification message confirmed description update with 'You changed the group description. Tap to view.'"
+            }
+          ],
+          "explanation": "The user successfully created a group named 'Test group' and then navigated to the group description screen. They typed and saved the description 'Adding a dummy description'. Upon returning to the group info screen, the updated description was visible, and a notification confirmed the change with 'You changed the group description. Tap to view.'"
+        }
+      ]
+    }
+  ]
+}
