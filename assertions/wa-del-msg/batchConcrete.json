@@ -1,0 +1,16 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "In the chat screen, the user is able to delete the message for themselves only",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Deleting a message"
+    },
+    {
+        "id": "step2-assertion1",
+        "text": "On deleting the message, there should not be any further options to choose from",
+        "type": "concrete",
+        "testStepId": "step2",
+        "testStepDescription": "Delete message options"
+    }
+]

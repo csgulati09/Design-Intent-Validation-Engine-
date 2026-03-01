@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Making a call to the contact",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "The user should be able to search the contact and then should be able to the see the call button in the chat screen",
+          "verdict": "fail",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "timestampSeconds": 2,
+              "frameIndex": 2,
+              "description": "User types 'Me' in the search bar to search for contact"
+            },
+            {
+              "timestampSeconds": 3,
+              "frameIndex": 3,
+              "description": "User enters the chat with 'Me' contact - a video call icon is visible in the top right corner of the header"
+            },
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 4,
+              "description": "User begins typing a message while in the chat, but focus shifts away from locating the call button"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "User returns to main Chats list screen, showing the message was sent but not demonstrating clear access to call functionality from within the chat"
+            }
+          ],
+          "explanation": "The user successfully searches for a contact ('Me') and navigates to the chat screen, but the call button is not clearly visible or accessible in the final chat screen shown. While there are video call icons visible in earlier frames (Frame 3 showing a video call icon in the header), the final state at Frame 14 shows the user has returned to the main Chats list without demonstrating the presence of a call button in the individual chat view. The flow shows search → entering chat → sending message, but does not conclusively show the call button being present and accessible in the chat screen where the user would initiate a call."
+        }
+      ]
+    }
+  ]
+}

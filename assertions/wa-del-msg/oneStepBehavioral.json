@@ -1,0 +1,9 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "Delete message option should be there only once and other should be no two ways to delete a message.",
+        "type": "behavioral",
+        "testStepId": "step1",
+        "testStepDescription": ""
+    }
+]

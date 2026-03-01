@@ -1,0 +1,9 @@
+[
+    {
+      "id": "step1-assertion1",
+      "text": "We need to check how easy and self explanatory the process is to send a message and delete in the chat screen is. How is the user behaviour when they want to delete a message? Is it straightforward or does it feel like it has a learning curve?",
+      "type": "subjective",
+      "testStepId": "step1",
+      "testStepDescription": "Deleting a message"
+    }
+  ]

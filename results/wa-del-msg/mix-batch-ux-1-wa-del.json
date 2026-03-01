@@ -1,0 +1,170 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Delete message options",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "On deleting the message, there should not be any further options to choose from",
+          "verdict": "fail",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "Context menu displayed with multiple options (Reply, Forward, Copy, Edit, Info, Star, Delete, More...) even though delete action was already initiated"
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Additional delete confirmation dialog showing 'Delete for everyone' and 'Delete for me' options, representing further choices after initial delete action"
+            }
+          ],
+          "explanation": "After deleting the message, the system still provides additional options through a context menu. At frame 16 (t=16.0s), after the user has already initiated the delete action, a menu appears with options including 'Reply', 'Forward', 'Copy', 'Edit', 'Info', 'Star', 'Delete', and 'More...'. This contradicts the assertion that there should not be any further options to choose from when deleting a message."
+        }
+      ]
+    },
+    {
+      "id": "step2",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step2-assertion1",
+          "text": "We need to check how easy and self explanatory the process is to send a message and delete in the chat screen is. How is the user behaviour when they want to delete a message? Is it straightforward or does it feel like it has a learning curve?",
+          "verdict": "pass",
+          "confidence": 0.75,
+          "evidence": [
+            {
+              "timestampSeconds": 4,
+              "frameIndex": 4,
+              "description": "Keyboard appears for message composition - standard and expected behavior"
+            },
+            {
+              "timestampSeconds": 11,
+              "frameIndex": 11,
+              "description": "Message 'Delete test message' is composed and visible in input field"
+            },
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "Context menu appears with clearly labeled 'Delete' option in red, indicating destructive action - good affordance"
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Clear confirmation dialog with two distinct deletion options, preventing accidental deletion - good error prevention"
+            }
+          ],
+          "explanation": "The message deletion process appears reasonably straightforward but has moderate complexity. The user types a message (frames 4-11), sends it successfully, then accesses deletion through a long-press context menu (frame 16), which presents a clear 'Delete' option. However, the process requires multiple steps: composing message, long-pressing the message bubble, selecting from a menu, then choosing delete type. While each step follows familiar mobile patterns, the multi-step nature and nested menus suggest a slight learning curve rather than being completely intuitive."
+        }
+      ]
+    },
+    {
+      "id": "step3",
+      "description": "Message sent successfully",
+      "assertions": [
+        {
+          "id": "step3-assertion1",
+          "text": "The message should be sent successfully and the user should be able to see the message in the chat screen",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 11,
+              "frameIndex": 11,
+              "description": "Message 'Delete test message' visible as a sent message bubble at 4:27 PM with double checkmarks"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "Message remains visible in chat thread, confirming persistent display after sending"
+            },
+            {
+              "timestampSeconds": 21,
+              "frameIndex": 21,
+              "description": "Message still clearly visible before deletion action is completed"
+            }
+          ],
+          "explanation": "The message 'Delete test message' was successfully sent and is clearly visible in the chat screen. The message appears at the bottom of the conversation thread with a timestamp of 4:27 PM and delivery confirmation checkmarks, indicating successful sending and delivery."
+        },
+        {
+          "id": "step3-assertion2",
+          "text": "The user should be able to select the message to delete from the chat screen",
+          "verdict": "pass",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "Context menu appears after long-pressing the message, showing available actions including Delete"
+            },
+            {
+              "timestampSeconds": 20,
+              "frameIndex": 20,
+              "description": "Message is selected with visible checkbox indicators on left side and green checkmark on the target message, with '1 Selected' shown at bottom"
+            },
+            {
+              "timestampSeconds": 25,
+              "frameIndex": 25,
+              "description": "Selection state maintained with checkboxes visible and '1 Selected' counter at bottom"
+            }
+          ],
+          "explanation": "The user successfully selected the message 'Delete test message' for deletion. The selection mechanism uses a long-press gesture that triggers both a context menu and a selection state (indicated by circular checkboxes on the left). The message shows a green checkmark at frame 20, confirming it is selected, and the bottom bar displays '1 Selected'."
+        },
+        {
+          "id": "step3-assertion3",
+          "text": "The user should be able to delete the message from the chat screen",
+          "verdict": "pass",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "Context menu displayed with 'Delete' option in red, indicating the destructive action is available"
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Confirmation dialog showing 'Delete message?' with options 'Delete for everyone' and 'Delete for me'"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "System message 'You deleted this message.' appears at 4:27 PM, confirming successful deletion"
+            }
+          ],
+          "explanation": "The user was able to delete the message from the chat screen. The deletion process involved: (1) long-pressing the message to open a context menu, (2) selecting the 'Delete' option from the menu, (3) choosing a deletion type ('Delete for me' or 'Delete for everyone') from a confirmation dialog. While the exact moment of clicking the final delete button isn't captured, frame 34 shows the result: a system message 'You deleted this message.' confirming successful deletion."
+        },
+        {
+          "id": "step3-assertion4",
+          "text": "The message should be deleted successfully and the user should be able to see the message in the chat screen",
+          "verdict": "pass",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "timestampSeconds": 21,
+              "frameIndex": 21,
+              "description": "Original message 'Delete test message' visible at bottom of Today section before deletion"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "System message 'You deleted this message.' displayed at 4:27 PM in place of the original message, confirming successful deletion with clear visual feedback"
+            }
+          ],
+          "explanation": "The message was successfully deleted and the user can see confirmation of deletion in the chat screen. The original message 'Delete test message' has been replaced with a system notification 'You deleted this message.' at timestamp 4:27 PM, providing clear feedback that the deletion action was completed. This system message serves as both confirmation and a record that a message existed and was removed."
+        }
+      ]
+    }
+  ]
+}

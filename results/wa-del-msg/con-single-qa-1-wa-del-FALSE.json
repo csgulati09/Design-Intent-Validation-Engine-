@@ -1,0 +1,53 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "In the chat screen, the user is able to delete the message for themselves only",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 11,
+              "frameIndex": 11,
+              "description": "User composes and sends a message with text 'Delete test message' which appears in the chat at 4:27 PM"
+            },
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "Long-press action triggers context menu with multiple options including Reply, Forward, Copy, Edit, Info, Star, Delete (in red), and More..."
+            },
+            {
+              "timestampSeconds": 23,
+              "frameIndex": 23,
+              "description": "A shortened context menu appears with Pin, Translate, Delete (in red), and More... options"
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Dialog titled 'Delete message?' appears with two options: 'Delete for everyone' and 'Delete for me', both in red text"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "Message successfully deleted - confirmation text 'You deleted this message.' appears at 4:27 PM at the bottom of the Today section, confirming the delete-for-me action completed successfully"
+            }
+          ],
+          "explanation": "The recording demonstrates the complete user flow for deleting a message for themselves only. The user long-presses a message labeled 'Delete test message', opens the context menu, navigates through multiple deletion options, and ultimately selects 'Delete for me' from a dialog presenting both 'Delete for everyone' and 'Delete for me' options. The message is then successfully deleted, as evidenced by the appearance of 'You deleted this message.' indicator at the bottom of the chat screen at timestamp 34s."
+        }
+      ]
+    }
+  ]
+}

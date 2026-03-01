@@ -1,0 +1,73 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "In the chat screen, the user is able to delete the message for themselves only",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 11,
+              "frameIndex": 11,
+              "description": "Message 'Delete test message' is composed and visible in the chat"
+            },
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "Long-press context menu appears with Delete option (in red) among other options like Reply, Forward, Copy, Edit, Info, Star"
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Confirmation dialog 'Delete message?' appears with two options: 'Delete for everyone' and 'Delete for me'"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "After deletion, the system shows 'You deleted this message.' confirmation, indicating successful deletion for self"
+            }
+          ],
+          "explanation": "The user successfully demonstrates the ability to delete a message for themselves only. The flow shows: (1) typing 'Delete test message', (2) long-pressing the message to access options, (3) a context menu appearing with a 'Delete' option, (4) tapping 'Delete' which opens a confirmation dialog with two distinct options: 'Delete for everyone' and 'Delete for me'. The user selects 'Delete for me', confirming the capability to delete for themselves only."
+        }
+      ]
+    },
+    {
+      "id": "step2",
+      "description": "Delete message options",
+      "assertions": [
+        {
+          "id": "step2-assertion1",
+          "text": "On deleting the message, there should not be any further options to choose from",
+          "verdict": "fail",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "After tapping Delete, a modal dialog appears titled 'Delete message?' with two distinct options presented to the user: 'Delete for everyone' and 'Delete for me'"
+            },
+            {
+              "timestampSeconds": 30,
+              "frameIndex": 30,
+              "description": "The same confirmation dialog remains visible, requiring the user to choose between the two deletion options before proceeding"
+            }
+          ],
+          "explanation": "After the user initiates the delete action, a confirmation dialog appears with two deletion options ('Delete for everyone' and 'Delete for me'). This means there ARE further options to choose from after requesting to delete the message. The assertion states there should NOT be any further options, but the recording clearly shows a choice must be made between two deletion modes."
+        }
+      ]
+    }
+  ]
+}

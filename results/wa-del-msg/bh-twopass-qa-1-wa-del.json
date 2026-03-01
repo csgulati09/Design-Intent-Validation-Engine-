@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Delete message option should be there only once and other should be no two ways to delete a message.",
+          "verdict": "fail",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 16,
+              "description": "First deletion pathway: Context menu overlay appears after long-press gesture, displaying a 'Delete' option (in red text with trash icon) among other options like Reply, Forward, Copy, Edit, Info, Star, and More."
+            },
+            {
+              "timestampSeconds": 20,
+              "description": "Second deletion pathway: Selection mode activated showing checkboxes on messages. The 'Delete test message' has a green checkmark in its checkbox. Bottom bar displays a trash icon on the left and '1 Selected' text, providing an alternative method to delete."
+            },
+            {
+              "timestampSeconds": 23,
+              "description": "Context menu reappears with simplified options including 'Delete' (in red text with trash icon), confirming the first deletion pathway remains accessible."
+            },
+            {
+              "timestampSeconds": 27,
+              "description": "Delete confirmation dialog 'Delete message?' appears, which is reached from the selection mode pathway, showing both deletion methods converge to the same final step."
+            },
+            {
+              "timestampSeconds": 34,
+              "description": "Message successfully deleted regardless of pathway used, with system message 'You deleted this message. 4:27 PM' confirming deletion completion. This demonstrates both methods are functional deletion pathways."
+            }
+          ],
+          "explanation": "The recording shows multiple pathways to delete a message, contradicting the assertion that there should be only one way. Two distinct deletion workflows are observed: (1) Long-press context menu with 'Delete' option appearing at 16 seconds, and (2) Selection mode with trash icon at 20 seconds. Both paths lead to the same deletion confirmation dialog and successfully delete the message. The presence of two separate UI patterns for initiating message deletion fails the requirement for a single deletion method."
+        }
+      ]
+    }
+  ]
+}

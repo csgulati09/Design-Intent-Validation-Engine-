@@ -1,0 +1,30 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "The user should be able to search the contact and then should be able to open the chat screen",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Opening the chat screen"
+    },
+    {
+        "id": "step1-assertion2",
+        "text": "The user should be able to send a message to the contact where it has reached the recipient",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Sending a message to the contact"
+    },
+    {
+        "id": "step2-assertion1",
+        "text": "The user should be able to search the contact and then should be able to the see the call button in the chat screen",
+        "type": "concrete",
+        "testStepId": "step2",
+        "testStepDescription": "Making a call to the contact"
+    },
+    {
+        "id": "step3-assertion1",
+        "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+        "type": "subjective",
+        "testStepId": "step3",
+        "testStepDescription": "We need to check how intuitive the send message button is"
+    }
+]

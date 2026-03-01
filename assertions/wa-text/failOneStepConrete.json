@@ -1,0 +1,9 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "The user should be able to search the contact and then should be able to the see the call button in the chat screen",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Making a call to the contact"
+    }
+]

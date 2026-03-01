@@ -1,0 +1,58 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 30,
+      "frameCount": 1054
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "In the chat screen, the user is able to delete the message for themselves only",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 3.7,
+              "frameIndex": 111,
+              "description": "User navigates into 'Me (You)' chat showing existing messages with timestamps at 4:27 PM and a deleted message from 'Yesterday' at 11:28 AM"
+            },
+            {
+              "timestampSeconds": 11.1,
+              "frameIndex": 333,
+              "description": "Message 'Delete test message' appears in the chat at 4:27 PM with double checkmark indicating sent status"
+            },
+            {
+              "timestampSeconds": 16.6,
+              "frameIndex": 499,
+              "description": "Context menu appears with options including Reply, Forward, Copy, Edit, Info, Star, and Delete (in red), plus More... option"
+            },
+            {
+              "timestampSeconds": 20.3,
+              "frameIndex": 610,
+              "description": "Selection mode activated with circular checkboxes next to messages, 'Delete test message' selected with green checkmark, bottom bar shows '1 Selected' with trash icon"
+            },
+            {
+              "timestampSeconds": 27.7,
+              "frameIndex": 831,
+              "description": "Modal dialog 'Delete message?' appears with two options: 'Delete for everyone' (red text) and 'Delete for me' (red text), with X close button"
+            },
+            {
+              "timestampSeconds": 33.3,
+              "frameIndex": 998,
+              "description": "The 'Delete test message' is replaced with 'You deleted this message.' status at 4:27 PM, confirming message was deleted for user only"
+            }
+          ],
+          "explanation": "The recording clearly demonstrates the user deleting a message for themselves only. The sequence shows: (1) User opens the 'Me (You)' chat at t=3.7s, (2) Types 'Delete test message' at t=9.2-11.1s, (3) Sends the message which appears in the chat at t=11.1-12.9s, (4) Long-presses to access message options at t=16.6-18.5s showing a context menu with 'Delete' option, (5) Selects the message for deletion at t=20.3s showing '1 Selected' indicator, (6) Taps the delete icon at t=25.9-27.7s, (7) A dialog appears at t=27.7s offering 'Delete for everyone' and 'Delete for me' options, (8) After selection, the message is replaced with 'You deleted this message' status at t=33.3-35.1s. The presence of the 'Delete for me' option and the resulting 'You deleted this message' indicator confirms the message was deleted for the user only, not for all participants."
+        }
+      ]
+    }
+  ]
+}

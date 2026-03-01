@@ -1,0 +1,44 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "Delete message option should be there only once and other should be no two ways to delete a message.",
+          "verdict": "fail",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 16,
+              "description": "First delete path: Long-press on message bubble reveals full context menu with Delete option alongside Reply, Forward, Copy, Edit, Info, Star, and More"
+            },
+            {
+              "timestampSeconds": 20,
+              "description": "User taps message entering selection mode with checkboxes, showing alternative interaction model"
+            },
+            {
+              "timestampSeconds": 23,
+              "description": "Second delete path: While in selection mode, long-press reveals condensed context menu with Pin, Translate, Delete, and More options"
+            },
+            {
+              "timestampSeconds": 27,
+              "description": "Both paths converge to the same 'Delete message?' confirmation dialog with 'Delete for everyone' and 'Delete for me' options"
+            }
+          ],
+          "explanation": "The user was able to access the delete functionality through multiple distinct interaction paths. First, a long-press revealed a context menu with a 'Delete' option among other actions (Reply, Forward, Copy, etc.). Then, after tapping the message to enter selection mode, another long-press revealed a different, condensed context menu that also included a 'Delete' option. Both paths led to the same delete confirmation dialog, demonstrating two separate ways to delete a message rather than a single, consistent method."
+        }
+      ]
+    }
+  ]
+}

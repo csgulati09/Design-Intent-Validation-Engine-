@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "We need to check how easy and self explanatory the process is to send a message and delete in the chat screen is. How is the user behaviour when they want to delete a message? Is it straightforward or does it feel like it has a learning curve?",
+          "verdict": "pass",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "timestampSeconds": 16,
+              "frameIndex": 16,
+              "description": "User long-presses on 'Delete test message' and a contextual menu appears with emoji reactions at top and standard message actions below including Reply, Forward, Copy, Edit, Info, Star, and Delete (in red destructive styling)"
+            },
+            {
+              "timestampSeconds": 23,
+              "frameIndex": 23,
+              "description": "After selecting delete from the menu, a secondary contextual menu appears showing Pin, Translate, Delete, and More options, indicating the delete action is easily discoverable through multiple interaction paths"
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "A clear confirmation modal appears with 'Delete message?' header and two well-labeled options: 'Delete for everyone' and 'Delete for me' in red text, preventing accidental deletion"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "The message is successfully deleted and replaced with 'You deleted this message.' status indicator at 4:27 PM, providing clear system feedback that the action completed"
+            }
+          ],
+          "explanation": "The message deletion process follows a discoverable and intuitive interaction pattern. The user successfully completes a standard long-press gesture on a message, which reveals a contextual menu with clearly labeled options including 'Delete' in red (standard destructive action color). The flow includes appropriate confirmation with a modal asking 'Delete message?' and offering two clear choices ('Delete for everyone' and 'Delete for me'). The entire process aligns with common messaging app conventions and shows no signs of user confusion or hesitation. The system provides immediate feedback with 'You deleted this message' confirmation, completing the feedback loop."
+        }
+      ]
+    }
+  ]
+}

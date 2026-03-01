@@ -1,0 +1,44 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "On deleting the message, there should not be any further options to choose from",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Delete message options"
+    },
+    {
+        "id": "step2-assertion1",
+        "text": "We need to check how easy and self explanatory the process is to send a message and delete in the chat screen is. How is the user behaviour when they want to delete a message? Is it straightforward or does it feel like it has a learning curve?",
+        "type": "subjective",
+        "testStepId": "step2",
+        "testStepDescription": "Deleting a message"
+    },
+    {
+        "id": "step3-assertion1",
+        "text": "The message should be sent successfully and the user should be able to see the message in the chat screen",
+        "type": "concrete",
+        "testStepId": "step3",
+        "testStepDescription": "Message sent successfully"
+    },
+    {
+        "id": "step3-assertion2",
+        "text": "The user should be able to select the message to delete from the chat screen",
+        "type": "concrete",
+        "testStepId": "step3",
+        "testStepDescription": "Selecting a message to delete"
+    },
+    {
+        "id": "step3-assertion3",
+        "text": "The user should be able to delete the message from the chat screen",
+        "type": "concrete",
+        "testStepId": "step3",
+        "testStepDescription": "Deleting a message"
+    },
+    {
+        "id": "step3-assertion4",
+        "text": "The message should be deleted successfully and the user should be able to see the message in the chat screen",
+        "type": "concrete",
+        "testStepId": "step3",
+        "testStepDescription": "Message deleted successfully"
+    }
+]

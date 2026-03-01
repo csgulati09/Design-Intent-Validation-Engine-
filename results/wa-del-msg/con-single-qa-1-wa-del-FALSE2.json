@@ -1,0 +1,38 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "In the chat screen, the user is able to delete the message for themselves only",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Delete confirmation dialog appears with heading 'Delete message?' and two options: 'Delete for everyone' (in red) and 'Delete for me' (in red)"
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "The message 'Delete test message' has been replaced with 'You deleted this message.' at 4:27 PM under the Today section, confirming successful deletion for self"
+            }
+          ],
+          "explanation": "The recording clearly demonstrates the ability to delete a message for the user themselves only. At t=27s, a delete dialog appears with two distinct options: 'Delete for everyone' and 'Delete for me'. At t=34s, after the user appears to have selected 'Delete for me', the message 'Delete test message' is replaced with the system notification 'You deleted this message.' at 4:27 PM, confirming successful deletion for self only. The message was not removed from the chat history entirely but replaced with a deletion indicator, which is consistent with 'delete for me' functionality where the message remains visible to others."
+        }
+      ]
+    }
+  ]
+}

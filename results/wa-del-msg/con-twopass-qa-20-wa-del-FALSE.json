@@ -1,0 +1,48 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 20,
+      "frameCount": 703
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "In the chat screen, the user is able to delete the message for themselves only",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 11.1,
+              "description": "Message 'Delete test message' appears in the chat thread at 4:27 PM with checkmark indicator, establishing the target message for deletion."
+            },
+            {
+              "timestampSeconds": 20.3,
+              "description": "Message selection mode activated. The message 'Delete test message' at 4:27 PM has a green checkmark indicating selection, with trash icon visible in bottom bar."
+            },
+            {
+              "timestampSeconds": 27.7,
+              "description": "Modal dialog appears with title 'Delete message?' presenting two distinct options in red text: 'Delete for everyone' and 'Delete for me', confirming the user has the ability to choose self-only deletion."
+            },
+            {
+              "timestampSeconds": 29.6,
+              "description": "Delete confirmation modal remains on screen with both deletion options still visible and available."
+            },
+            {
+              "timestampSeconds": 33.3,
+              "description": "Modal dismissed. Message 'Delete test message' is replaced by system notification 'You deleted this message.' with timestamp 4:27 PM in a gray bubble, confirming successful deletion."
+            }
+          ],
+          "explanation": "The video demonstrates the complete flow of deleting a message with the option to delete for oneself only. At 27.7s, a modal appears with two distinct deletion options: 'Delete for everyone' and 'Delete for me'. The presence of both options confirms that the user has the ability to delete the message for themselves only (as opposed to being forced to delete for everyone). At 33.3s, after the modal is dismissed, the message is replaced with 'You deleted this message.' indicator, confirming the deletion was executed. While the video does not explicitly show the 'Delete for me' option being tapped (the modal simply disappears), the resulting state is consistent with a successful deletion action, and the key evidence is that the 'Delete for me' option was presented and available to the user."
+        }
+      ]
+    }
+  ]
+}

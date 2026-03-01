@@ -1,0 +1,38 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/del.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 35
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Deleting a message",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "In the chat screen, the user is able to delete the message for me only and not for everyone",
+          "verdict": "fail",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Modal dialog 'Delete message?' displays two options: 'Delete for everyone' (in red text) and 'Delete for me' (in red text), showing both deletion options are available to the user."
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "Chat view shows a new system message 'You deleted this message.' at 4:27 PM in the Today section, confirming successful deletion. The message 'Delete test message' is no longer visible in the chat thread."
+            }
+          ],
+          "explanation": "The recording shows that the user successfully deleted the message with both 'Delete for everyone' and 'Delete for me' options available. At frame 27 (t=27s), the modal 'Delete message?' appears with both deletion options clearly visible. At frame 34 (t=34s), a new deletion notification 'You deleted this message.' appears in the Today section at 4:27 PM, confirming the deletion was completed. The assertion states the user should be able to delete 'for me only and not for everyone', but the evidence shows both options were available to the user, contradicting the 'not for everyone' requirement."
+        }
+      ]
+    }
+  ]
+}

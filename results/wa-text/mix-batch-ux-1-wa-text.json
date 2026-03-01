@@ -1,0 +1,137 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/text.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 15
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Opening the chat screen",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "The user should be able to search the contact and then should be able to open the chat screen",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 0,
+              "frameIndex": 0,
+              "description": "Starting point showing the main Chats list with the search bar 'Ask Meta AI or Search' visible at the top"
+            },
+            {
+              "timestampSeconds": 2,
+              "frameIndex": 2,
+              "description": "User has typed 'Me' in the search field and the results are filtered to show the 'Me' contact at the top of the Chats section"
+            },
+            {
+              "timestampSeconds": 3,
+              "frameIndex": 3,
+              "description": "Chat screen with 'Me' is now open, showing previous messages and the text input field at the bottom"
+            }
+          ],
+          "explanation": "The user successfully searched for a contact ('Me') and opened the chat screen. The flow is clear: from the main Chats view (Frame 0), the user tapped the search field, typed 'Me', saw filtered results (Frame 2), then tapped on the 'Me' contact to open the chat screen (Frame 3-13). The navigation is straightforward and completes the assertion."
+        },
+        {
+          "id": "step1-assertion2",
+          "text": "The user should be able to send a message to the contact where it has reached the recipient",
+          "verdict": "pass",
+          "confidence": 0.98,
+          "evidence": [
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "User is typing 'Hello' in the message input field with the on-screen keyboard visible and a green send button appears"
+            },
+            {
+              "timestampSeconds": 8,
+              "frameIndex": 8,
+              "description": "User has completed typing 'Hello test message!' with the send button visible and ready to send"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "Message 'Hello test message!' is sent and appears with timestamp '11:10 PM' and double checkmark indicating delivery"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "Back at the main Chats list, the 'Me' conversation shows 'You: Hello test message!' with a checkmark, confirming the message was sent and delivered"
+            }
+          ],
+          "explanation": "The user successfully typed and sent a message ('Hello test message!') to the 'Me' contact. The message shows delivered status with double checkmarks at 11:10 PM (Frame 12). The user then navigated back to the main Chats list (Frame 14) where the sent message is visible in the conversation preview with 'You: Hello test message!' and the checkmark indicator, confirming successful delivery."
+        }
+      ]
+    },
+    {
+      "id": "step2",
+      "description": "Making a call to the contact",
+      "assertions": [
+        {
+          "id": "step2-assertion1",
+          "text": "The user should be able to search the contact and then should be able to the see the call button in the chat screen",
+          "verdict": "uncertain",
+          "confidence": 0.4,
+          "evidence": [
+            {
+              "timestampSeconds": 3,
+              "frameIndex": 3,
+              "description": "Chat screen with 'Me' is open, showing a video camera icon in the top-right corner next to '1,108', which represents video calling functionality"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "The video camera icon remains visible in the chat header throughout the interaction, but the user does not interact with it"
+            }
+          ],
+          "explanation": "While the user successfully searched for and opened the 'Me' chat, the recording does not show clear evidence of the user looking for or interacting with a call button. A video camera icon is visible in the top-right corner of the chat screen (Frames 3-13), which typically represents video calling functionality in WhatsApp. However, the user does not explicitly interact with it or demonstrate awareness of its presence. The assertion asks about seeing 'the call button', but it's unclear if this refers to voice call, video call, or both options being discoverable."
+        }
+      ]
+    },
+    {
+      "id": "step3",
+      "description": "We need to check how intuitive the send message button is",
+      "assertions": [
+        {
+          "id": "step3-assertion1",
+          "text": "We need to check how intuitive the entire process to use whatsapp is. Where the user is trying to search for a contact and type a message in the chat to send it. Does it feel natural and easy to use?",
+          "verdict": "pass",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "timestampSeconds": 0,
+              "frameIndex": 0,
+              "description": "Starting screen shows familiar messaging interface with clear search affordance at the top and organized chat list"
+            },
+            {
+              "timestampSeconds": 2,
+              "frameIndex": 2,
+              "description": "Search filtering works immediately and effectively, showing 'Me' contact prominently when typed"
+            },
+            {
+              "timestampSeconds": 5,
+              "frameIndex": 5,
+              "description": "Keyboard provides helpful autocomplete suggestions ('Hello', 'Hello') as the user types, and the send button appears as a green arrow, clearly indicating sending action"
+            },
+            {
+              "timestampSeconds": 12,
+              "frameIndex": 12,
+              "description": "Message sent successfully with clear timestamp and delivery confirmation (double checkmark), providing good feedback on system status"
+            },
+            {
+              "timestampSeconds": 14,
+              "frameIndex": 14,
+              "description": "Return to main chat list is smooth, showing the sent message in the preview with 'You: Hello test message!' making it easy to see recent activity"
+            }
+          ],
+          "explanation": "The entire process demonstrates good intuitiveness and ease of use. The search functionality works as expected - typing immediately filters results. The keyboard provides helpful autocomplete suggestions ('Hello', 'there', etc.) that speed up typing. The send button clearly changes from a sticker/attachment icon to a green send arrow when text is entered, providing clear affordance. The user completes the task smoothly without any visible confusion, hesitation, or errors. The flow is: search → tap contact → type message → send → return to chats - all standard and predictable. The double checkmark feedback confirms message delivery. However, there are minor cognitive load points: the search field label 'Ask Meta AI or Search' may introduce slight confusion about dual functionality, and the abundance of UI elements on the main screen (filters, badges, icons) creates some visual noise."
+        }
+      ]
+    }
+  ]
+}

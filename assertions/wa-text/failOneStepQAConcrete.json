@@ -1,0 +1,9 @@
+[
+    {
+        "id": "step1-assertion1",
+        "text": "The users sees only the call button in the chat screen and it doesn't change when the user types the message. Make sure that when the call is made, the screen is changed to the call screen",
+        "type": "concrete",
+        "testStepId": "step1",
+        "testStepDescription": "Making a call to the contact"
+    }
+]
