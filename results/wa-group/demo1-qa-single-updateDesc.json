@@ -1,0 +1,63 @@
+{
+  "videoMetadata": {
+    "path": "/Users/chandeep/Documents/Workspace/Personal/Drizz/test/group.MP4",
+    "durationSeconds": 0,
+    "frameSampling": {
+      "mode": "uniform",
+      "fps": 1,
+      "frameCount": 44
+    }
+  },
+  "testSteps": [
+    {
+      "id": "step1",
+      "description": "Updating a group description",
+      "assertions": [
+        {
+          "id": "step1-assertion1",
+          "text": "On successful creation of the group, the user should be able to update the group description. The group description should be updated successfully and the user should be able to see the updated group description in the group info screen",
+          "verdict": "pass",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "timestampSeconds": 18,
+              "frameIndex": 18,
+              "description": "Group chat screen for 'Test group' displayed with system message 'You created this group', confirming successful group creation."
+            },
+            {
+              "timestampSeconds": 23,
+              "frameIndex": 23,
+              "description": "Group info settings screen displayed showing 'Add group description' field, indicating description editing capability is accessible."
+            },
+            {
+              "timestampSeconds": 27,
+              "frameIndex": 27,
+              "description": "Group description edit screen displayed with empty text input field and placeholder 'Add group description', confirming user accessed description editing interface."
+            },
+            {
+              "timestampSeconds": 29,
+              "frameIndex": 29,
+              "description": "Text 'Adding a' visible in description field with cursor, showing active text entry in progress."
+            },
+            {
+              "timestampSeconds": 34,
+              "frameIndex": 34,
+              "description": "Complete description text 'Adding a dummy description' displayed in input field with cursor at end, indicating text entry completed."
+            },
+            {
+              "timestampSeconds": 36,
+              "frameIndex": 36,
+              "description": "Group info screen displayed with description 'Adding a dummy description' visible below group name 'Test group', confirming successful save and display of updated description."
+            },
+            {
+              "timestampSeconds": 38,
+              "frameIndex": 38,
+              "description": "Group info screen showing 'Adding a dummy description' as a tappable row in settings list, further confirming the description was successfully updated and is visible in the group info screen."
+            }
+          ],
+          "explanation": "The assertion is confirmed. The group was successfully created, the user navigated to edit the group description, entered text, saved the changes, and the updated description was displayed in the group info screen. At t=18s, the group chat screen confirmed successful group creation. At t=27s, the group description edit screen was accessed. Between t=29s and t=34s, the description 'Adding a dummy description' was typed. At t=36s and t=38s, the group info screen displayed the updated description text below the group name, confirming successful update and visibility."
+        }
+      ]
+    }
+  ]
+}
